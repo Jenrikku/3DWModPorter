@@ -13,8 +13,11 @@ namespace _3DWPort {
             if(args.Length > 0) {
                 string[] subargs = new string[] { "" };
                 if(args.Length > 1) {
-                    subargs = new string[args.Length - 2];
-                    args.CopyTo(subargs, 1);
+                    subargs = new string[args.Length - 1];
+
+                    for(byte i = 2; args.Length >= i; i++) {
+                        subargs[i - 2] = args[i - 1];
+                    }
                 }
 
                 CommandManager.Execute(args[0], subargs);

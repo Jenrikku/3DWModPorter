@@ -18,8 +18,16 @@ namespace _3DWPort {
 
         public static void Execute(string commandName, string[] args) {
             foreach(ICommand command in commandList) {
-                if(command.Name().Equals(commandName)) command.Action(args);
+                if(command.Name().ToLower().Equals(commandName.ToLower())) command.Action(args);
             }
+        }
+
+        public static ICommand Get(string commandName) {
+            foreach(ICommand command in commandList) {
+                if(command.Name().ToLower().Equals(commandName.ToLower())) return command;
+            }
+
+            return null;
         }
     }
 }

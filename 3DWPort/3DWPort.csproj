@@ -6,8 +6,22 @@
     <RootNamespace>_3DWPort</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="Modules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Hack.io">
+      <HintPath>dll\Hack.io.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

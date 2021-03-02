@@ -3,7 +3,7 @@
 namespace _3DWPort.Commands {
     class Unpack : ICommand {
         public void Action(string[] args) {
-            throw new NotImplementedException();
+            //Hack.io.YAZ0.YAZ0
         }
 
         public string Name() {

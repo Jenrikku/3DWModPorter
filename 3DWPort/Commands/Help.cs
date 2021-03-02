@@ -5,9 +5,21 @@ using System.Text;
 namespace _3DWPort.Commands {
     class Help : ICommand {
         public void Action(string[] args) {
-            Console.WriteLine("List of available commands:\n");
-            foreach(ICommand command in CommandManager.commandList) {
-                Console.WriteLine(command.Name() + " - " + command.Help()[0]);
+            if(args[0].Equals("")) {
+                Console.WriteLine("List of available commands:\n");
+                foreach(ICommand command in CommandManager.commandList) {
+                    Console.WriteLine(command.Name() + " - " + command.Help()[0]);
+                }
+            } else {
+                ICommand command = CommandManager.Get(args[0]);
+
+                if(command == null) {
+                    Console.WriteLine("No command with this name was found.");
+                    return;
+                }
+
+                Console.WriteLine(args[0] + " - " + command.Help()[0] + "\n");
+                Console.WriteLine(command.Help()[1]);
             }
         }
 

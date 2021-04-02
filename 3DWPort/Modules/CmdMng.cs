@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
-namespace _3DWPort {
-    class CommandManager {
+namespace _3DWPort.Modules {
+    class CmdMng {
         public static readonly List<ICommand> commandList = new List<ICommand>();
 
         public static void Register(ICommand command) {

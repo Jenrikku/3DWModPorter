@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hack.io.YAZ0</name>
+    </assembly>
+    <members>
+        <member name="T:Hack.io.YAZ0.YAZ0">
+            <summary>
+            Class containing methods to compress and decompress Data into Yaz0
+            </summary>
+        </member>
+        <member name="M:Hack.io.YAZ0.YAZ0.Decompress(System.String)">
+            <summary>
+            Decompress a file into a memorystream
+            </summary>
+            <param name="Filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hack.io.YAZ0.YAZ0.Decompress(System.Byte[])">
+            <summary>
+            Decompress a byte[] into a memorystream
+            </summary>
+            <param name="Data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hack.io.YAZ0.YAZ0.Compress(System.String,System.Boolean)">
+            <summary>
+            Compress a file
+            </summary>
+            <param name="Filename">File to compress</param>
+            <param name="Quick">If true, takes shorter time to compress, but is overall weaker then if disabled (resulting in larger files)</param>
+        </member>
+        <member name="M:Hack.io.YAZ0.YAZ0.Compress(System.IO.MemoryStream)">
+            <summary>
+            Compress a MemoryStream
+            </summary>
+            <param name="YAZ0">MemoryStream to compress</param>
+        </member>
+        <member name="M:Hack.io.YAZ0.YAZ0.Check(System.String)">
+            <summary>
+            Checks a given file for Yaz0 Encoding
+            </summary>
+            <param name="Filename">File to check</param>
+            <returns>true if the file is Yaz0 Encoded</returns>
+        </member>
+    </members>
+</doc>

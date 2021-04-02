@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using _3DWPort.Modules;
+using System;
 
 namespace _3DWPort.Commands {
     class Help : ICommand {
         public void Action(string[] args) {
             if(args[0].Equals("")) {
                 Console.WriteLine("List of available commands:\n");
-                foreach(ICommand command in CommandManager.commandList) {
+                foreach(ICommand command in CmdMng.commandList) {
                     Console.WriteLine(command.Name() + " - " + command.Help()[0]);
                 }
             } else {
-                ICommand command = CommandManager.Get(args[0]);
+                ICommand command = CmdMng.Get(args[0]);
 
                 if(command == null) {
                     Console.WriteLine("No command with this name was found.");
